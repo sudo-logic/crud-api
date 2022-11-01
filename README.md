@@ -9,9 +9,9 @@ https://crud-api-srm.azurewebsites.net/
 
 ## Usage
 
-1. Create a new user with `PUT /`
+1. Create a new user with `POST /`
 2. Get a list of all users with `GET /` or `GET /:id`
-3. Update a user with `POST /:id`
+3. Update a user with `PUT /:id`
 4. Delete a user with `DELETE /:id`
 
 
