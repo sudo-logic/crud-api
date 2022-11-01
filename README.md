@@ -21,7 +21,7 @@ https://crud-api-srm.azurewebsites.net/
 2. Install dependencies with `npm install`
 3. Create a `.env` file in the root directory and add the following:
 
-```bash
+```dosini
 PORT=3000
 MONGO_URI=<mongo_uri>
 ```
