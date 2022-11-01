@@ -27,8 +27,9 @@ db.once("open", () => console.log("Connected to database"));
 
 const studentSchema = new mongoose.Schema(
   {
-    name: String,
     _id: String,
+    name: String,
+    phone: String,
   },
   { versionKey: false }
 );
@@ -40,10 +41,11 @@ const students = mongoose.model("Student", studentSchema);
 /* Create a new student */
 app.post("/", async (req, res, next) => {
   try {
-    const { name, _id } = req.body;
+    const { _id, name, phone } = req.body;
     const student = new students({
-      name,
       _id,
+      name,
+      phone,
     });
 
     await student.save();
@@ -91,7 +93,7 @@ app.get("/:id", async (req, res, next) => {
 app.put("/:id", async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, _id } = req.body;
+    const { name, _id, phone } = req.body;
     const student = await students.findOne({
       _id: id,
     });
@@ -101,6 +103,7 @@ app.put("/:id", async (req, res, next) => {
     }
     student.name = name;
     student._id = _id;
+    student.phone = phone;
     await student.save();
     res.json(student);
   } catch (error) {
