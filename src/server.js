@@ -1,5 +1,3 @@
-// Make a single RESTful API for CRUD operations in MongoDB with a
-// JavaScript server like Node.js.
 const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
